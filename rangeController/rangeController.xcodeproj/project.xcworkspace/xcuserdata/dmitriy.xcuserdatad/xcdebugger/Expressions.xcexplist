@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "RangeSlider.continueTracking(_:with:):RangeSlider.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "lowerValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RangeSlider.updateFrames():RangeSlider.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "upperThumbLayer.frame">
+            </PersistentString>
+            <PersistentString
+               value = "lowerThumbLayer.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewDidLayoutSubviews():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "rangeSlider.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RangeSlider.updateLayerFrames():RangeSlider.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "trackLayer.frame">
+            </PersistentString>
+            <PersistentString
+               value = "lowerThumbImageView.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RangeSlider.thumbOriginForValue(_:):RangeSlider.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "bounds.height">
+            </PersistentString>
+            <PersistentString
+               value = "thumbImageSize.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in RangeSlider.thumbImageSize.getter:RangeSlider.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "trackLayer.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
