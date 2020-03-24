@@ -55,6 +55,9 @@
                                         <constraint firstAttribute="height" constant="50" id="2A9-ra-L8y"/>
                                     </constraints>
                                     <state key="normal" title="ПРИМЕНИТЬ"/>
+                                    <connections>
+                                        <action selector="acceptButtonPressed:" destination="DyL-go-Rmi" eventType="touchUpInside" id="gpz-Rl-pP0"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.85063498858447473" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -88,8 +91,14 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Сбросить" id="uUA-rV-UlZ">
                             <color key="tintColor" red="0.749" green="0.76500000000000001" blue="0.78000000000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="resetButtonPressed:" destination="DyL-go-Rmi" id="dlz-MI-rpd"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resetButton" destination="uUA-rV-UlZ" id="NDh-a2-QfZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XH4-GU-X6O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,7 +18,17 @@ class FilterTableViewController: UITableViewController {
     
     var validator : ValuesValidator!
     
+    @IBOutlet weak var resetButton: UIBarButtonItem!
+    
+    var isValid : Bool = true {
+        didSet {
+            resetButton.tintColor = isValid ?
+                UIColor(red: 0.749, green: 0.765, blue: 0.78, alpha: 1) :
+                UIColor(red: 0, green: 0.643, blue: 1, alpha: 1)
+        }
+    }
     weak var delegate : FilterDataDelegate?
+    
     
     override func viewDidLoad() {
         
@@ -32,6 +42,17 @@ class FilterTableViewController: UITableViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func resetButtonPressed(_ sender: Any) {
+        
+        model = validator.oldCopy
+        tableView.reloadData()
+    }
+    
+    @IBAction func acceptButtonPressed(_ sender: Any) {
+        
+        delegate?.didSet(data: model)
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension FilterTableViewController {
@@ -94,6 +115,6 @@ extension FilterTableViewController {
 extension FilterTableViewController : ValueChangedDelegate {
     
     func didChangeValue() {
-        print(validator.validate())
+        isValid = validator.validate()
     }
 }

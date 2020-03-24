@@ -122,9 +122,9 @@ class RangeSlider: UIControl {
         trackLayer.setNeedsDisplay()
         
         lowerThumbLayer.frame = CGRect(origin: thumbOriginForValue(CGFloat(lowerValue)),
-                                           size: thumbImageSize)
+                                       size: thumbImageSize)
         upperThumbLayer.frame = CGRect(origin: thumbOriginForValue(CGFloat(upperValue)),
-                                           size: thumbImageSize)
+                                       size: thumbImageSize)
         
         upperThumbLabel.center.x = upperThumbLayer.center.x
         lowerThumbLabel.center.x = lowerThumbLayer.center.x
@@ -137,15 +137,15 @@ class RangeSlider: UIControl {
     }
     
     private func checkDistances() {
-         
-         let differ = lowerThumbLabel.frame.maxX - upperThumbLabel.frame.minX
-         
-         if differ > 0 {
-             
-             lowerThumbLabel.center.x -= differ / 2
-             upperThumbLabel.center.x += differ / 2
-         }
-     }
+        
+        let differ = lowerThumbLabel.frame.maxX - upperThumbLabel.frame.minX
+        
+        if differ > 0 {
+            
+            lowerThumbLabel.center.x -= differ / 2
+            upperThumbLabel.center.x += differ / 2
+        }
+    }
     
     
     private func positionForValue(_ value: CGFloat) -> CGFloat {
@@ -187,7 +187,7 @@ extension RangeSlider {
         let stepSize = trackSize.width * CGFloat(step) / CGFloat(maximumValue - minimumValue)
         
         if deltaLocation * CGFloat(mult) >= stepSize {
-
+            
             previousLocation = location
             let numOfSteps = deltaLocation / stepSize
             
