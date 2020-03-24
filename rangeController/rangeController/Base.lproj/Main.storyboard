@@ -23,17 +23,11 @@
                                     <segue destination="DyL-go-Rmi" kind="show" id="cGY-FX-Ad5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gX4-vu-Jf5" customClass="RoundedShadowButton" customModule="rangeController" customModuleProvider="target">
-                                <rect key="frame" x="160" y="373" width="94" height="30"/>
-                                <state key="normal" title="ПРИМЕНИТЬ"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="gX4-vu-Jf5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IZl-Pe-olt"/>
                             <constraint firstItem="yuR-nj-8n7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="niy-pf-1Ko"/>
                             <constraint firstItem="yuR-nj-8n7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pZD-fG-dzS"/>
-                            <constraint firstItem="yuR-nj-8n7" firstAttribute="top" secondItem="gX4-vu-Jf5" secondAttribute="bottom" constant="29" id="wUB-Zk-4HP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -50,7 +44,26 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EzB-IV-JSg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.85063498859999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Yjq-Ss-yse">
+                            <rect key="frame" x="0.0" y="142" width="414" height="91"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arz-Kp-sIX" customClass="RoundedShadowButton" customModule="rangeController" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="20.5" width="364" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="2A9-ra-L8y"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.85063498858447473" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="arz-Kp-sIX" secondAttribute="trailing" constant="25" id="GzA-vZ-BLe"/>
+                                <constraint firstItem="arz-Kp-sIX" firstAttribute="centerY" secondItem="Yjq-Ss-yse" secondAttribute="centerY" id="cy0-xo-bRB"/>
+                                <constraint firstItem="arz-Kp-sIX" firstAttribute="leading" secondItem="Yjq-Ss-yse" secondAttribute="leading" constant="25" id="xWJ-Ut-4QP"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FilterCell" rowHeight="86" id="gmb-1z-Asg" customClass="FilterCell" customModule="rangeController" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="86"/>

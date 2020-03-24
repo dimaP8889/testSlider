@@ -9,7 +9,7 @@
 import UIKit
 
 class FilterTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class FilterTableViewController: UITableViewController {
         let label = UILabel(frame: CGRect(x: 9, y: 17, width: 15, height: 20))
         
         view.addSubview(label)
-        view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.8506349921, green: 0.8506349921, blue: 0.8506349921, alpha: 1)
         
         label.font = UIFont(name: "HelveticaNeue-Bold", size: 17)
         label.text = "\(section + 1)"
