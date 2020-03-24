@@ -51,7 +51,7 @@ class RangeSlider: UIControl {
     lazy var lowerThumbLabel : UILabel = {
         
         let label = UILabel()
-        label.font = UIFont(name: "SFProDisplay-Regular", size: 13)
+        label.font = UIFont(name: "HelveticaNeue-Regular", size: 13)
         label.textColor = UIColor(red: 0, green: 0.643, blue: 1, alpha: 1)
         return label
     }()
@@ -59,7 +59,7 @@ class RangeSlider: UIControl {
     lazy var upperThumbLabel : UILabel = {
         
         let label = UILabel()
-        label.font = UIFont(name: "SFProDisplay-Regular", size: 13)
+        label.font = UIFont(name: "HelveticaNeue-Regular", size: 13)
         label.textColor = UIColor(red: 0, green: 0.643, blue: 1, alpha: 1)
         return label
     }()
@@ -121,9 +121,9 @@ class RangeSlider: UIControl {
                                   size: trackSize)
         trackLayer.setNeedsDisplay()
         
-        lowerThumbLayer.frame = CGRect(origin: thumbOriginForValue(CGFloat(lowerValue)),
+        lowerThumbLayer.frame = CGRect(origin: thumbOriginForValue(lowerValue),
                                        size: thumbImageSize)
-        upperThumbLayer.frame = CGRect(origin: thumbOriginForValue(CGFloat(upperValue)),
+        upperThumbLayer.frame = CGRect(origin: thumbOriginForValue(upperValue),
                                        size: thumbImageSize)
         
         upperThumbLabel.center.x = upperThumbLayer.center.x
@@ -138,6 +138,13 @@ class RangeSlider: UIControl {
     
     private func checkDistances() {
         
+        
+        let lowerOut = bounds.minX - lowerThumbLabel.frame.minX
+        lowerThumbLabel.center.x += lowerOut < 0 ? 0 : lowerOut
+        
+        let upperOut = bounds.maxX - upperThumbLabel.frame.maxX
+        upperThumbLabel.center.x += upperOut > 0 ? 0 : upperOut
+        
         let differ = lowerThumbLabel.frame.maxX - upperThumbLabel.frame.minX
         
         if differ > 0 {
@@ -149,11 +156,11 @@ class RangeSlider: UIControl {
     
     
     private func positionForValue(_ value: CGFloat) -> CGFloat {
-        return value / CGFloat(maximumValue - minimumValue) * trackSize.width
+        return value / (maximumValue - minimumValue) * trackSize.width
     }
     
     private func thumbOriginForValue(_ value: CGFloat) -> CGPoint {
-        let x = positionForValue(value) - thumbImageSize.width / 2 + margin
+        let x = positionForValue(value) - thumbImageSize.width + margin
         return CGPoint(x: x, y: (bounds.height - thumbImageSize.height) / 2.0 + lowerThumbLabel.bounds.height / 2)
     }
 }
@@ -184,7 +191,7 @@ extension RangeSlider {
         let deltaLocation = location.x - previousLocation.x
         
         let mult = deltaLocation > 0 ? 1 : -1
-        let stepSize = trackSize.width * CGFloat(step) / CGFloat(maximumValue - minimumValue)
+        let stepSize = trackSize.width * CGFloat(step) / (maximumValue - minimumValue)
         
         if deltaLocation * CGFloat(mult) >= stepSize {
             
@@ -202,6 +209,8 @@ extension RangeSlider {
                                         upperValue: maximumValue)
                 
             }
+            lowerValue.round()
+            upperValue.round()
         }
         
         CATransaction.begin()
