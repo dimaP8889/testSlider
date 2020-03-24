@@ -54,7 +54,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="2A9-ra-L8y"/>
                                     </constraints>
-                                    <state key="normal" title="Button"/>
+                                    <state key="normal" title="ПРИМЕНИТЬ"/>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.85063498858447473" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -80,8 +80,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Фильтры" id="TIR-Pt-YTU">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="Vector" id="Wvc-Qs-GUU">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Vector" style="done" id="Wvc-Qs-GUU">
                             <color key="tintColor" red="0.255" green="0.26700000000000002" blue="0.28199999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="closeButtonPressed:" destination="DyL-go-Rmi" id="X1O-0f-kfb"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Сбросить" id="uUA-rV-UlZ">
                             <color key="tintColor" red="0.749" green="0.76500000000000001" blue="0.78000000000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

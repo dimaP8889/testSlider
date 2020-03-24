@@ -17,18 +17,23 @@ class FilterTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
-    }
-
-    override func tableView(_ tableView: UITableView,
-                            numberOfRowsInSection section: Int) -> Int {
-        return 1
+    @IBAction func closeButtonPressed(_ sender: Any) {
+        
+        navigationController?.popViewController(animated: true)
     }
     
+}
+
+extension FilterTableViewController {
+    
     override func tableView(_ tableView: UITableView,
-                            heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 94
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCell", for: indexPath)
+            as? FilterCell else { return UITableViewCell() }
+        
+        cell.setupRange(min: 0, max: 24, lower: 15, upper: 23)
+        return cell
     }
     
     override func tableView(_ tableView: UITableView,
@@ -45,20 +50,29 @@ class FilterTableViewController: UITableViewController {
         
         return view
     }
+}
+
+extension FilterTableViewController {
+    
+    override func tableView(_ tableView: UITableView,
+                            heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 94
+    }
     
     override func tableView(_ tableView: UITableView,
                             heightForHeaderInSection section: Int) -> CGFloat {
-        54
+        return 54
     }
+}
+
+extension FilterTableViewController {
     
-    override func tableView(_ tableView: UITableView,
-                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCell", for: indexPath)
-            as? FilterCell else { return UITableViewCell() }
-        
-        cell.setupRange(min: 0, max: 24, lower: 15, upper: 23)
-        return cell
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
     }
 
+    override func tableView(_ tableView: UITableView,
+                            numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
 }

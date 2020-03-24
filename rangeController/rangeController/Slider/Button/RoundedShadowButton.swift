@@ -34,7 +34,7 @@ class RoundedShadowButton: UIButton {
         layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowColor = UIColor(red: 0, green: 0.643, blue: 1, alpha: 0.45).cgColor
 
-        let attributedText = NSMutableAttributedString(string: "ПРИМЕНИТЬ",
+        let attributedText = NSMutableAttributedString(string: titleLabel?.text ?? "",
                                                        attributes: [NSAttributedString.Key.kern: 0.85,
                                                                     NSAttributedString.Key.foregroundColor : UIColor.white,
                                                                     NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 17)!])

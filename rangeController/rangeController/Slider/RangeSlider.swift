@@ -14,9 +14,11 @@ class RangeSlider: UIControl {
     //MARK: Instance Variables
     
     var minimumValue: CGFloat = 0
-    var maximumValue: CGFloat = 30
-    var lowerValue: CGFloat = 4
-    var upperValue: CGFloat = 21
+    var maximumValue: CGFloat = 1
+    var lowerValue: CGFloat = 0
+    var upperValue: CGFloat = 1
+    
+    var step : Int = 1
     
     private let thumbImage = #imageLiteral(resourceName: "Oval")
     private var thumbImageSize = CGSize(width: 31, height: 31)
@@ -77,12 +79,14 @@ class RangeSlider: UIControl {
     }
     
     func setValues(min: Int, max: Int,
-                   lower: Int, upper: Int) {
+                   lower: Int, upper: Int,
+                   step: Int = 1) {
         
         minimumValue = CGFloat(min)
         maximumValue = CGFloat(max)
         lowerValue = CGFloat(lower)
         upperValue = CGFloat(upper)
+        self.step = step
         
         updateFrames()
         setLabelsText()
@@ -106,9 +110,9 @@ class RangeSlider: UIControl {
                                   size: trackSize)
         trackLayer.setNeedsDisplay()
         
-        lowerThumbLayer.frame = CGRect(origin: thumbOriginForValue(lowerValue),
+        lowerThumbLayer.frame = CGRect(origin: thumbOriginForValue(CGFloat(lowerValue)),
                                            size: thumbImageSize)
-        upperThumbLayer.frame = CGRect(origin: thumbOriginForValue(upperValue),
+        upperThumbLayer.frame = CGRect(origin: thumbOriginForValue(CGFloat(upperValue)),
                                            size: thumbImageSize)
         
         upperThumbLabel.center.x = upperThumbLayer.center.x
@@ -134,7 +138,7 @@ class RangeSlider: UIControl {
     
     
     private func positionForValue(_ value: CGFloat) -> CGFloat {
-        return value / (maximumValue - minimumValue) * trackSize.width
+        return value / CGFloat(maximumValue - minimumValue) * trackSize.width
     }
     
     private func thumbOriginForValue(_ value: CGFloat) -> CGPoint {
@@ -159,7 +163,6 @@ extension RangeSlider {
             upperThumbLayer.isHighlighted = true
         }
         
-        
         return lowerThumbLayer.isHighlighted || upperThumbLayer.isHighlighted
     }
     
@@ -168,20 +171,26 @@ extension RangeSlider {
         let location = touch.location(in: self)
         
         let deltaLocation = location.x - previousLocation.x
-        let deltaValue = (maximumValue - minimumValue) * deltaLocation / trackSize.width
         
-        previousLocation = location
+        let mult = deltaLocation > 0 ? 1 : -1
+        let stepSize = trackSize.width * CGFloat(step) / CGFloat(maximumValue - minimumValue)
         
-        if lowerThumbLayer.isHighlighted {
-            lowerValue += deltaValue
-            lowerValue = boundValue(lowerValue, toLowerValue: minimumValue,
-                                    upperValue: upperValue)
+        if deltaLocation * CGFloat(mult) >= stepSize {
+
+            previousLocation = location
+            let numOfSteps = deltaLocation / stepSize
             
-        } else if upperThumbLayer.isHighlighted {
-            upperValue += deltaValue
-            
-            upperValue = boundValue(upperValue, toLowerValue: lowerValue,
-                                    upperValue: maximumValue)
+            if lowerThumbLayer.isHighlighted {
+                lowerValue += CGFloat(step) * numOfSteps
+                lowerValue = boundValue(lowerValue, toLowerValue: minimumValue,
+                                        upperValue: upperValue)
+                
+            } else if upperThumbLayer.isHighlighted {
+                upperValue += CGFloat(step) * numOfSteps
+                upperValue = boundValue(upperValue, toLowerValue: lowerValue,
+                                        upperValue: maximumValue)
+                
+            }
         }
         
         CATransaction.begin()
