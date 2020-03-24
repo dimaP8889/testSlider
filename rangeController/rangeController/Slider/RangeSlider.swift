@@ -90,7 +90,7 @@ class RangeSlider: UIControl {
     private func updateFrames() {
         
         trackLayer.frame = CGRect(origin: CGPoint(x: margin,
-                                                  y: (bounds.size.height - trackSize.height) / 2),
+                                                  y: (bounds.size.height - trackSize.height) / 2 + lowerThumbLabel.bounds.height / 2),
                                   size: trackSize)
         trackLayer.setNeedsDisplay()
         
@@ -127,7 +127,7 @@ class RangeSlider: UIControl {
     
     private func thumbOriginForValue(_ value: CGFloat) -> CGPoint {
         let x = positionForValue(value) - thumbImageSize.width / 2 + margin
-        return CGPoint(x: x, y: (bounds.height - thumbImageSize.height) / 2.0)
+        return CGPoint(x: x, y: (bounds.height - thumbImageSize.height) / 2.0 + lowerThumbLabel.bounds.height / 2)
     }
 }
 
