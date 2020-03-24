@@ -23,6 +23,7 @@
 		2CE26A3E242A8AAB0043F0A9 /* Copying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A3D242A8AAB0043F0A9 /* Copying.swift */; };
 		2CE26A45242A8E5C0043F0A9 /* ValueChangedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A44242A8E5C0043F0A9 /* ValueChangedDelegate.swift */; };
 		2CE26A47242A94B60043F0A9 /* FilterDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A46242A94B60043F0A9 /* FilterDataDelegate.swift */; };
+		2CE26A49242AA5450043F0A9 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A48242AA5450043F0A9 /* InfoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		2CE26A3D242A8AAB0043F0A9 /* Copying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Copying.swift; sourceTree = "<group>"; };
 		2CE26A44242A8E5C0043F0A9 /* ValueChangedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueChangedDelegate.swift; sourceTree = "<group>"; };
 		2CE26A46242A94B60043F0A9 /* FilterDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDataDelegate.swift; sourceTree = "<group>"; };
+		2CE26A48242AA5450043F0A9 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				2CE26A2F242A355C0043F0A9 /* FilterCell.swift */,
+				2CE26A48242AA5450043F0A9 /* InfoTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				2CE26A45242A8E5C0043F0A9 /* ValueChangedDelegate.swift in Sources */,
 				2CE26A3B242A88F90043F0A9 /* ValuesValidator.swift in Sources */,
 				2C37A7222429111800FB6DDE /* AppDelegate.swift in Sources */,
+				2CE26A49242AA5450043F0A9 /* InfoTableViewCell.swift in Sources */,
 				2CE26A2C24293FE50043F0A9 /* ThumbView.swift in Sources */,
 				2CE26A35242A504D0043F0A9 /* RoundedShadowButton.swift in Sources */,
 			);

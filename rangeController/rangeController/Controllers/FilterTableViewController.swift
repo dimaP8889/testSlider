@@ -25,6 +25,7 @@ class FilterTableViewController: UITableViewController {
             resetButton.tintColor = isValid ?
                 UIColor(red: 0.749, green: 0.765, blue: 0.78, alpha: 1) :
                 UIColor(red: 0, green: 0.643, blue: 1, alpha: 1)
+            resetButton.isEnabled = !isValid
         }
     }
     weak var delegate : FilterDataDelegate?
@@ -103,7 +104,7 @@ extension FilterTableViewController {
 extension FilterTableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return model.count
     }
 
     override func tableView(_ tableView: UITableView,
