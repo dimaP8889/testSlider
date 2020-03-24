@@ -196,7 +196,7 @@ extension RangeSlider {
         if deltaLocation * CGFloat(mult) >= stepSize {
             
             previousLocation = location
-            let numOfSteps = deltaLocation / stepSize
+            let numOfSteps = (deltaLocation / stepSize).rounded()
             
             if lowerThumbLayer.isHighlighted {
                 lowerValue += CGFloat(step) * numOfSteps
