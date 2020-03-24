@@ -76,6 +76,18 @@ class RangeSlider: UIControl {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setValues(min: Int, max: Int,
+                   lower: Int, upper: Int) {
+        
+        minimumValue = CGFloat(min)
+        maximumValue = CGFloat(max)
+        lowerValue = CGFloat(lower)
+        upperValue = CGFloat(upper)
+        
+        updateFrames()
+        setLabelsText()
+    }
+    
     //MARK: Handle UI
     private func setLabelsText() {
         
@@ -121,7 +133,7 @@ class RangeSlider: UIControl {
      }
     
     
-    func positionForValue(_ value: CGFloat) -> CGFloat {
+    private func positionForValue(_ value: CGFloat) -> CGFloat {
         return value / (maximumValue - minimumValue) * trackSize.width
     }
     

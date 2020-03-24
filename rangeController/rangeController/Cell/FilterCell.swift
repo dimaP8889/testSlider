@@ -15,7 +15,7 @@ class FilterCell : UITableViewCell {
     
     override var frame: CGRect {
         
-        didSet { setupConstraints() }
+        didSet { setupFrame() }
     }
     
     override func awakeFromNib() {
@@ -24,8 +24,15 @@ class FilterCell : UITableViewCell {
         addSubview(rangeSlider)
     }
     
-    func setupConstraints() {
+    private func setupFrame() {
         
         rangeSlider.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height)
+    }
+    
+    func setupRange(min: Int, max: Int,
+                    lower: Int, upper: Int) {
+        
+        rangeSlider.setValues(min: min, max: max,
+                              lower: lower, upper: upper)
     }
 }

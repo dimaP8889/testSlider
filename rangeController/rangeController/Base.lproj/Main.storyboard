@@ -16,17 +16,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuR-nj-8n7">
-                                <rect key="frame" x="188" y="433" width="38" height="30"/>
+                                <rect key="frame" x="185" y="432" width="44" height="32"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Show"/>
                                 <connections>
                                     <segue destination="DyL-go-Rmi" kind="show" id="cGY-FX-Ad5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gX4-vu-Jf5" customClass="RoundedShadowButton" customModule="rangeController" customModuleProvider="target">
+                                <rect key="frame" x="160" y="373" width="94" height="30"/>
+                                <state key="normal" title="ПРИМЕНИТЬ"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="gX4-vu-Jf5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IZl-Pe-olt"/>
                             <constraint firstItem="yuR-nj-8n7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="niy-pf-1Ko"/>
                             <constraint firstItem="yuR-nj-8n7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pZD-fG-dzS"/>
+                            <constraint firstItem="yuR-nj-8n7" firstAttribute="top" secondItem="gX4-vu-Jf5" secondAttribute="bottom" constant="29" id="wUB-Zk-4HP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

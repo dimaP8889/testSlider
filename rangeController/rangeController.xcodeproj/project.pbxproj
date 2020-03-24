@@ -17,6 +17,7 @@
 		2CE26A2C24293FE50043F0A9 /* ThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A2B24293FE50043F0A9 /* ThumbView.swift */; };
 		2CE26A30242A355C0043F0A9 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A2F242A355C0043F0A9 /* FilterCell.swift */; };
 		2CE26A32242A38270043F0A9 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A31242A38270043F0A9 /* FilterTableViewController.swift */; };
+		2CE26A35242A504D0043F0A9 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A34242A504D0043F0A9 /* RoundedShadowButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2CE26A2B24293FE50043F0A9 /* ThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbView.swift; sourceTree = "<group>"; };
 		2CE26A2F242A355C0043F0A9 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		2CE26A31242A38270043F0A9 /* FilterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
+		2CE26A34242A504D0043F0A9 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		2CE26A2624292FC40043F0A9 /* Slider */ = {
 			isa = PBXGroup;
 			children = (
+				2CE26A33242A4F240043F0A9 /* Button */,
 				2CE26A292429384A0043F0A9 /* View */,
 				2CE26A2424292FB30043F0A9 /* Layer */,
 				2CE26A20242911700043F0A9 /* RangeSlider.swift */,
@@ -125,6 +128,14 @@
 				2CE26A2F242A355C0043F0A9 /* FilterCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2CE26A33242A4F240043F0A9 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				2CE26A34242A504D0043F0A9 /* RoundedShadowButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +216,7 @@
 				2CE26A32242A38270043F0A9 /* FilterTableViewController.swift in Sources */,
 				2C37A7222429111800FB6DDE /* AppDelegate.swift in Sources */,
 				2CE26A2C24293FE50043F0A9 /* ThumbView.swift in Sources */,
+				2CE26A35242A504D0043F0A9 /* RoundedShadowButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
