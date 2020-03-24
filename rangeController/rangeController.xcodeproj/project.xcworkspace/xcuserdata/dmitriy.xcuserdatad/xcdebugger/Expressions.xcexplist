@@ -3,29 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "RangeSlider.continueTracking(_:with:):RangeSlider.swift">
+         contextName = "closure #1 in RangeSlider.thumbImageSize.getter:RangeSlider.swift">
          <PersistentStrings>
             <PersistentString
-               value = "lowerValue">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "RangeSlider.updateFrames():RangeSlider.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "upperThumbLayer.frame">
-            </PersistentString>
-            <PersistentString
-               value = "lowerThumbLayer.frame">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ViewController.viewDidLayoutSubviews():ViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "rangeSlider.bounds">
+               value = "trackLayer.frame">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -52,10 +33,37 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in RangeSlider.thumbImageSize.getter:RangeSlider.swift">
+         contextName = "FilterTableViewController.closeButtonPressed(_:):FilterTableViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "trackLayer.frame">
+               value = "validator.oldCopy">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RangeSlider.updateFrames():RangeSlider.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "upperThumbLayer.frame">
+            </PersistentString>
+            <PersistentString
+               value = "lowerThumbLayer.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RangeSlider.continueTracking(_:with:):RangeSlider.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "lowerValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewDidLayoutSubviews():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "rangeSlider.bounds">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

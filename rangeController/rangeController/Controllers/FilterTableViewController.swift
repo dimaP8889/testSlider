@@ -10,6 +10,16 @@ import UIKit
 
 class FilterTableViewController: UITableViewController {
     
+    var model : [ValueController] = [] {
+        didSet {
+            validator = ValuesValidator(values: model)
+        }
+    }
+    
+    var validator : ValuesValidator!
+    
+    weak var delegate : FilterDataDelegate?
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -32,7 +42,11 @@ extension FilterTableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCell", for: indexPath)
             as? FilterCell else { return UITableViewCell() }
         
-        cell.setupRange(min: 0, max: 24, lower: 15, upper: 23)
+        if model[indexPath.section].delegate == nil {
+            model[indexPath.section].delegate = self
+        }
+        
+        cell.setupRange(values: model[indexPath.section])
         return cell
     }
     
@@ -74,5 +88,12 @@ extension FilterTableViewController {
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
         return 1
+    }
+}
+
+extension FilterTableViewController : ValueChangedDelegate {
+    
+    func didChangeValue() {
+        print(validator.validate())
     }
 }

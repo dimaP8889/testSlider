@@ -11,6 +11,10 @@ import UIKit
 
 class FilterCell : UITableViewCell {
     
+    weak var delegate : ValueChangedDelegate?
+    
+    var model : ValueController?
+    
     let rangeSlider = RangeSlider(frame: .zero)
     
     override var frame: CGRect {
@@ -29,10 +33,11 @@ class FilterCell : UITableViewCell {
         rangeSlider.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height)
     }
     
-    func setupRange(min: Int, max: Int,
-                    lower: Int, upper: Int) {
+    func setupRange(values: ValueController) {
         
-        rangeSlider.setValues(min: min, max: max,
-                              lower: lower, upper: upper)
+        model = values
+        
+        rangeSlider.setValues(values: values)
     }
 }
+

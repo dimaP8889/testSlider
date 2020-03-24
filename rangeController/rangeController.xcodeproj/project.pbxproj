@@ -18,6 +18,11 @@
 		2CE26A30242A355C0043F0A9 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A2F242A355C0043F0A9 /* FilterCell.swift */; };
 		2CE26A32242A38270043F0A9 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A31242A38270043F0A9 /* FilterTableViewController.swift */; };
 		2CE26A35242A504D0043F0A9 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A34242A504D0043F0A9 /* RoundedShadowButton.swift */; };
+		2CE26A38242A85890043F0A9 /* ValueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A37242A85890043F0A9 /* ValueController.swift */; };
+		2CE26A3B242A88F90043F0A9 /* ValuesValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A3A242A88F90043F0A9 /* ValuesValidator.swift */; };
+		2CE26A3E242A8AAB0043F0A9 /* Copying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A3D242A8AAB0043F0A9 /* Copying.swift */; };
+		2CE26A45242A8E5C0043F0A9 /* ValueChangedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A44242A8E5C0043F0A9 /* ValueChangedDelegate.swift */; };
+		2CE26A47242A94B60043F0A9 /* FilterDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26A46242A94B60043F0A9 /* FilterDataDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		2CE26A2F242A355C0043F0A9 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		2CE26A31242A38270043F0A9 /* FilterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
 		2CE26A34242A504D0043F0A9 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
+		2CE26A37242A85890043F0A9 /* ValueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueController.swift; sourceTree = "<group>"; };
+		2CE26A3A242A88F90043F0A9 /* ValuesValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesValidator.swift; sourceTree = "<group>"; };
+		2CE26A3D242A8AAB0043F0A9 /* Copying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Copying.swift; sourceTree = "<group>"; };
+		2CE26A44242A8E5C0043F0A9 /* ValueChangedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueChangedDelegate.swift; sourceTree = "<group>"; };
+		2CE26A46242A94B60043F0A9 /* FilterDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDataDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +76,9 @@
 		2C37A7202429111800FB6DDE /* rangeController */ = {
 			isa = PBXGroup;
 			children = (
+				2CE26A43242A8E330043F0A9 /* Delegates */,
+				2CE26A3C242A8A9B0043F0A9 /* Extensions */,
+				2CE26A36242A85440043F0A9 /* Model */,
 				2CE26A2E242A35360043F0A9 /* Cell */,
 				2CE26A2D242966A60043F0A9 /* Controllers */,
 				2CE26A2524292FBB0043F0A9 /* View */,
@@ -116,6 +129,7 @@
 		2CE26A2D242966A60043F0A9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2CE26A39242A88E20043F0A9 /* Validator */,
 				2C37A7252429111800FB6DDE /* ViewController.swift */,
 				2CE26A31242A38270043F0A9 /* FilterTableViewController.swift */,
 			);
@@ -136,6 +150,39 @@
 				2CE26A34242A504D0043F0A9 /* RoundedShadowButton.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		2CE26A36242A85440043F0A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2CE26A37242A85890043F0A9 /* ValueController.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2CE26A39242A88E20043F0A9 /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				2CE26A3A242A88F90043F0A9 /* ValuesValidator.swift */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
+		2CE26A3C242A8A9B0043F0A9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2CE26A3D242A8AAB0043F0A9 /* Copying.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2CE26A43242A8E330043F0A9 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				2CE26A44242A8E5C0043F0A9 /* ValueChangedDelegate.swift */,
+				2CE26A46242A94B60043F0A9 /* FilterDataDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,10 +257,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CE26A2A242938E00043F0A9 /* RangeSlider.swift in Sources */,
+				2CE26A3E242A8AAB0043F0A9 /* Copying.swift in Sources */,
 				2CE26A30242A355C0043F0A9 /* FilterCell.swift in Sources */,
+				2CE26A47242A94B60043F0A9 /* FilterDataDelegate.swift in Sources */,
+				2CE26A38242A85890043F0A9 /* ValueController.swift in Sources */,
 				2CE26A28242931F00043F0A9 /* ThumbLayer.swift in Sources */,
 				2C37A7262429111800FB6DDE /* ViewController.swift in Sources */,
 				2CE26A32242A38270043F0A9 /* FilterTableViewController.swift in Sources */,
+				2CE26A45242A8E5C0043F0A9 /* ValueChangedDelegate.swift in Sources */,
+				2CE26A3B242A88F90043F0A9 /* ValuesValidator.swift in Sources */,
 				2C37A7222429111800FB6DDE /* AppDelegate.swift in Sources */,
 				2CE26A2C24293FE50043F0A9 /* ThumbView.swift in Sources */,
 				2CE26A35242A504D0043F0A9 /* RoundedShadowButton.swift in Sources */,

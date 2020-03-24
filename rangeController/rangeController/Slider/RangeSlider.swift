@@ -13,12 +13,29 @@ class RangeSlider: UIControl {
     
     //MARK: Instance Variables
     
-    var minimumValue: CGFloat = 0
-    var maximumValue: CGFloat = 1
-    var lowerValue: CGFloat = 0
-    var upperValue: CGFloat = 1
+    var valueController = ValueController()
     
-    var step : Int = 1
+    var maximumValue : CGFloat {
+        get { valueController.maximumValue }
+    }
+    
+    var minimumValue : CGFloat {
+        get { valueController.minimumValue }
+    }
+    
+    var lowerValue: CGFloat {
+        get { valueController.lowerValue }
+        set { valueController.lowerValue = newValue }
+    }
+    
+    var upperValue: CGFloat {
+        get { valueController.upperValue }
+        set { valueController.upperValue = newValue }
+    }
+    
+    var step : Int  {
+        get { valueController.step }
+    }
     
     private let thumbImage = #imageLiteral(resourceName: "Oval")
     private var thumbImageSize = CGSize(width: 31, height: 31)
@@ -78,15 +95,9 @@ class RangeSlider: UIControl {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setValues(min: Int, max: Int,
-                   lower: Int, upper: Int,
-                   step: Int = 1) {
+    func setValues(values: ValueController) {
         
-        minimumValue = CGFloat(min)
-        maximumValue = CGFloat(max)
-        lowerValue = CGFloat(lower)
-        upperValue = CGFloat(upper)
-        self.step = step
+        valueController = values
         
         updateFrames()
         setLabelsText()
