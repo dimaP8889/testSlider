@@ -13,6 +13,7 @@ class FilterTableViewController: UITableViewController {
     var model : [ValueController] = [] {
         didSet {
             validator = ValuesValidator(values: model)
+            isValid = true
         }
     }
     
