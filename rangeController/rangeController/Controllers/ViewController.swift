@@ -22,12 +22,12 @@ class ViewController: UIViewController {
                                      maximumValue: 31,
                                      lowerValue: 1,
                                      upperValue: 31,
-                                     step: 2))
+                                     step: 1))
         model.append(ValueController(minimumValue: 1,
                                      maximumValue: 31,
                                      lowerValue: 1,
                                      upperValue: 31,
-                                     step: 1))
+                                     step: 2))
         model.append(ValueController(minimumValue: 1,
                                      maximumValue: 31,
                                      lowerValue: 18,

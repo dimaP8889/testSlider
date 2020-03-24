@@ -109,6 +109,14 @@ class RangeSlider: UIControl {
         lowerThumbLabel.text = "\(Int(lowerValue)) ночей"
         upperThumbLabel.text = "\(Int(upperValue)) ночей"
         
+        if Int(lowerValue) == Int(maximumValue) {
+            lowerThumbLabel.text = "Более \(Int(lowerValue) - 1) ночей"
+        }
+        
+        if Int(upperValue) == Int(maximumValue) {
+            upperThumbLabel.text = "Более \(Int(upperValue) - 1) ночей"
+        }
+        
         upperThumbLabel.sizeToFit()
         lowerThumbLabel.sizeToFit()
     }
